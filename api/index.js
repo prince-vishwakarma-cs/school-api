@@ -36,7 +36,30 @@ app.get('/api', (req, res) => {
 app.get('/', (req, res) => {
   res.status(200).json({
     success: true,
-    message: 'Welcome to the School Management API',
+    message: 'Welcome to the School Management API. Here are the available endpoints:',
+    endpoints: [
+      {
+        endpoint: '/api/addSchool',
+        method: 'POST',
+        description: 'Adds a new school to the database.',
+        payload: {
+          name: 'String',
+          address: 'String',
+          latitude: 'Number',
+          longitude: 'Number'
+        }
+      },
+      {
+        endpoint: '/api/listSchools',
+        method: 'GET',
+        description: 'Fetches all schools, sorted by distance from the user.',
+        parameters: {
+          latitude: 'Number',
+          longitude: 'Number'
+        },
+        example: '/api/listSchools?latitude=22.7196&longitude=75.8577'
+      }
+    ]
   });
 });
 
