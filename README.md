@@ -2,9 +2,6 @@
 
 A Node.js REST API for managing school data with proximity-based sorting functionality.
 
-
-```
-
 ## API Endpoints
 
 ### 1. Add School
